@@ -1,0 +1,48 @@
+<div class="main-wrap">
+
+  <div class="hotel-name-outer">
+    <h1>Organa</h1>
+    <div class="ham-wrap" (click)="toggleSlider()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+  </div>
+
+  <div class="top-nav-outer">
+    <section>
+      <div class="example-button-row">
+        <button mat-raised-button>Services</button>
+        <button mat-raised-button>Gallery</button>
+        <button mat-raised-button>Notifications</button>
+        <button mat-raised-button>About</button>
+        <button mat-raised-button>Reports</button>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+
+  </div>
+
+</div>
+
+<div class="left-slider" *ngIf="sliderState" [@leftSlider]>
+
+  <ul class="nav-wrap">
+    <li class="li-menu">
+      <a routerLink="/dashboard/guest-management" class="hover">Guest Management</a>
+    </li>
+    <li class="li-menu">
+      <a routerLink="/dashboard/reservations" class="hover">Reservations</a>
+    </li>
+    <li class="li-menu">
+      <a routerLink="/dashboard/room-management" class="hover">Room Management</a>
+    </li>
+    <li class="li-menu">
+      <a routerLink="/dashboard/employee-management" class="hover">Employee Management</a>
+    </li>
+    <li class="li-menu">
+      <a routerLink="/dashboard/payments" class="hover">Payments</a>
+    </li>
+  </ul>
+</div>

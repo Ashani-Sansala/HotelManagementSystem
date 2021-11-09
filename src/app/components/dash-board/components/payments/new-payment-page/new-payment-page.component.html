@@ -1,0 +1,93 @@
+<form [formGroup]="paymentForm" (ngSubmit)="uploadData()">
+  <div class="main-wrap">
+
+    <div class="left-wrap">
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Payment Id</mat-label>
+          <input formControlName="payId" matInput placeholder="P-001" type="text">
+          <mat-error>Payment Id is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Reservation Id</mat-label>
+          <mat-select formControlName="resId">
+            <mat-option *ngFor="let tempReservations of allReservations"
+                        value="{{tempReservations.resId}}">{{tempReservations.resId}}</mat-option>
+          </mat-select>
+          <mat-error>Reservation Id required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Room Charge</mat-label>
+          <input formControlName="roomCharge" matInput type="text">
+          <mat-error>Room Charges is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Other Charges</mat-label>
+          <input formControlName="other" matInput type="text">
+          <mat-error>Other Charges is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Total Amount</mat-label>
+          <input formControlName="total" matInput type="text">
+          <mat-error>Total Amount is required</mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="right-wrap">
+
+      <div class="payment-wrap">
+        <label class="form-label">Payment Method</label><br>
+        <mat-radio-group formControlName="method" aria-label="Select an option" class="button-wrap" color="primary">
+          <mat-radio-button checked value="Cash">Cash &nbsp;</mat-radio-button>
+          <mat-radio-button value="Cheque">Cheque &nbsp;</mat-radio-button>
+          <mat-radio-button value="Money Order">Money Order </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Date</mat-label>
+          <input formControlName="date" matInput [matDatepicker]="picker2">
+          <mat-datepicker-toggle matSuffix [for]="picker2">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+          <mat-error>Check Out Date is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Received By</mat-label>
+          <input formControlName="received" matInput type="text">
+          <mat-error>Received By is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3">
+        <button [disabled]="paymentForm.invalid" mat-raised-button color="primary" type="submit">Complete Payment</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>
+
+

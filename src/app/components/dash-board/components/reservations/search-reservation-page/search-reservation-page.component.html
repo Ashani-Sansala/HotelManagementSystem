@@ -1,0 +1,35 @@
+<div class="mb-3">
+  <input #element (keyup.enter)="search(element.value)" type="search" class="form-control" id="search" placeholder="Search here">
+</div>
+
+<br>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Reservation Id</th>
+    <th>Guest Id</th>
+    <th>No Of Rooms</th>
+    <th>Room Type</th>
+    <th>No Of Adults</th>
+    <th>No Of Children</th>
+    <th>No Of Days</th>
+    <th>Check In Date</th>
+    <th>Check Out Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{dataSet?.resId}}</td>
+    <td>{{dataSet?.guestId}}</td>
+    <td>{{dataSet?.rooms}}</td>
+    <td>{{dataSet?.roomType}}</td>
+    <td>{{dataSet?.adults}}</td>
+    <td>{{dataSet?.children}}</td>
+    <td>{{dataSet?.days}}</td>
+    <td>{{dataSet?.checkIn}}</td>
+    <td>{{dataSet?.checkOut}}</td>
+  </tr>
+  </tbody>
+</table>
+

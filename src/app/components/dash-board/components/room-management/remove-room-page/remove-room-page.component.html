@@ -1,0 +1,17 @@
+<form [formGroup]="roomForm" (ngSubmit)="uploadData()">
+
+  <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Room Id</mat-label>
+          <input formControlName="roomId" matInput placeholder="RM-001" type="text">
+          <mat-error>Room Id is required</mat-error>
+        </mat-form-field>
+      </div>
+
+  <div class="mb-3">
+    <button [disabled]="roomForm.invalid" mat-raised-button color="primary" type="submit">Remove Room</button>
+  </div>
+
+</form>
+
+

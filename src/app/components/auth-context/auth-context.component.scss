@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Crete+Round&display=swap');
+.image{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-image: url("https://th.bing.com/th/id/R.113fee13e1123ab6a6b0ad8db15d10ea?rik=Wv8JBVvKp9xcOg&riu=http%3a%2f%2fmessagenote.com%2fwp-content%2fuploads%2f2011%2f07%2fmodern-interior-design.jpg&ehk=6aRxfAgZRJZi9gnhanUfLD%2fC5BU1t0FqFzNztKFLWXw%3d&risl=&pid=ImgRaw&r=0");
+}
+.dark-shadow{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(189, 192, 195,0.5);
+  overflow: hidden;
+}
+.main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner{
+  display: flex;
+  width: 60%;
+  height: 550px;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  box-shadow: -1px 2px 12px 3px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -1px 2px 12px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 2px 12px 3px rgba(0,0,0,0.75);
+
+}
+.wrap{
+  width: 50%;
+  height: 100%;
+}
+.left-side{
+  position: relative;
+
+  h4{
+    color: black;
+    text-align: center;
+    padding-left: 3px;
+  }
+  h1{
+    color: #1235e7;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arvo', serif;
+    font-family: 'Crete Round', serif;
+    font-size: 43px;
+    line-height: 1.3;
+  }
+}
+.right-side{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.navigate-context{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 10px;
+  /*box-shadow: -1px 1px 5px 3px rgba(0,0,0,0.61);
+  -webkit-box-shadow: -1px 1px 5px 1px rgba(0,0,0,0.61);
+  -moz-box-shadow: -1px 1px 5px 5px rgba(0,0,0,0.61);*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-bar{
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+
+  button{
+    width: 100px;
+    height: 35px;
+    background-color: #182C61;
+    color: white;
+    border-radius: 5px;
+  }
+
+  button:hover{
+      background-color: #273c75;
+      cursor: pointer;
+  }
+}
+.active{
+  background-color: #273c75!important;
+}

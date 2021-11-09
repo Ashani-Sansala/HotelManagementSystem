@@ -1,0 +1,17 @@
+<form [formGroup]="employeeForm" (ngSubmit)="uploadData()">
+
+  <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Employee Id</mat-label>
+          <input formControlName="empId" matInput placeholder="E-001" type="text">
+          <mat-error>Employee Id is required</mat-error>
+        </mat-form-field>
+      </div>
+
+  <div class="mb-3">
+    <button [disabled]="employeeForm.invalid" mat-raised-button color="primary" type="submit">Delete Employee</button>
+  </div>
+
+</form>
+
+

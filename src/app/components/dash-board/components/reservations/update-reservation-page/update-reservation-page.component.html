@@ -1,0 +1,109 @@
+<form [formGroup]="reservationForm" (ngSubmit)="uploadData()">
+  <div class="main-wrap">
+
+    <div class="left-wrap">
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Reservation Id</mat-label>
+          <input formControlName="resId" matInput placeholder="R-001" type="text">
+          <mat-error>Reservation Id is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Guest Id</mat-label>
+          <mat-select formControlName="guestId">
+            <mat-option *ngFor="let tempGuests of allGuests"
+                        value="{{tempGuests.id}}">{{tempGuests.id}}</mat-option>
+          </mat-select>
+          <mat-error>Guest Id is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>No Of Rooms</mat-label>
+          <input formControlName="rooms" matInput type="text">
+          <mat-error>No Of Rooms is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Room Type</mat-label>
+          <mat-select formControlName="roomType">
+            <mat-option value="Single">Single</mat-option>
+            <mat-option value="Double">Double</mat-option>
+            <mat-option value="Twin">Twin</mat-option>
+            <mat-option value="Duplex">Duplex</mat-option>
+            <mat-option value="Cabana">Cabana</mat-option>
+            <mat-option value="Studio">Studio</mat-option>
+            <mat-option value="Triple">Triple</mat-option>
+          </mat-select>
+          <mat-error>Room Type is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>No Of Adults</mat-label>
+          <input formControlName="adults" matInput type="text">
+          <mat-error>No Of Adults required</mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="right-wrap">
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>No Of Children</mat-label>
+          <input formControlName="children" matInput type="text">
+          <mat-error>No Of Children is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>No Of Days</mat-label>
+          <input formControlName="days" matInput type="text">
+          <mat-error>No Of Days required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Check In Date</mat-label>
+          <input formControlName="checkIn" matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error>Check In Date is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Check Out Date</mat-label>
+          <input formControlName="checkOut" matInput [matDatepicker]="picker1">
+          <mat-datepicker-toggle matSuffix [for]="picker1">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-error>Check Out Date is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3">
+        <button [disabled]="reservationForm.invalid" mat-raised-button color="primary" type="submit">Update Reservation</button>
+      </div>
+    </div>
+
+  </div>
+</form>
+
+

@@ -1,0 +1,73 @@
+<form [formGroup]="guestForm" (ngSubmit)="uploadData()">
+  <div class="main-wrap">
+
+    <div class="left-wrap">
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Guest Id</mat-label>
+          <input formControlName="id" matInput placeholder="G-001" type="text">
+          <mat-error>Guest Id is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Guest Name</mat-label>
+          <input formControlName="name" matInput placeholder="G.T.Perera" type="text">
+          <mat-error>Guest Name is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Contact No</mat-label>
+          <input formControlName="contact" matInput type="text">
+          <mat-error>Contact No is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Email Address</mat-label>
+          <input formControlName="email" matInput placeholder="ashani@gmail.com" type="email">
+          <mat-error>Email Address is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Country</mat-label>
+          <input formControlName="country" matInput placeholder="Sri Lanka" type="text">
+          <mat-error>Country is required</mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="right-wrap">
+      <div class="gender-wrap">
+        <label class="form-label">Gender</label><br>
+        <mat-radio-group formControlName="gender" aria-label="Select an option" color="primary">
+          <mat-radio-button value="Male">Male &nbsp;</mat-radio-button>
+          <mat-radio-button value="Female">Female &nbsp;</mat-radio-button>
+          <mat-radio-button value="Other">Other </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Permanent Address</mat-label>
+          <textarea formControlName="address" matInput></textarea>
+          <mat-error>Permanent Address is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3">
+        <button [disabled]="guestForm.invalid" mat-raised-button color="primary" type="submit">Register Guest</button>
+      </div>
+    </div>
+
+  </div>
+</form>

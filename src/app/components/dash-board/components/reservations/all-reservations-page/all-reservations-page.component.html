@@ -1,0 +1,35 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Reservation Id</th>
+    <th>Guest Id</th>
+    <th>No Of Rooms</th>
+    <th>Room Type</th>
+    <th>No Of Adults</th>
+    <th>No Of Children</th>
+    <th>No Of Days</th>
+    <th>Check In Date</th>
+    <th>Check Out Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let tempData of reservations; index as num;">
+    <td>{{tempData?.resId}}</td>
+    <td>{{tempData?.guestId}}</td>
+    <td>{{tempData?.rooms}}</td>
+    <td>{{tempData?.roomType}}</td>
+    <td>{{tempData?.adults}}</td>
+    <td>{{tempData?.children}}</td>
+    <td>{{tempData?.days}}</td>
+    <td>{{tempData?.checkIn}}</td>
+    <td>{{tempData?.checkOut}}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+<mat-paginator [length]="100"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 25, 100]"
+               aria-label="Select page">
+</mat-paginator>

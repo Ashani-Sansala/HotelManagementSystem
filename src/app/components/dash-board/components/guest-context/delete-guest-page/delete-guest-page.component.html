@@ -1,0 +1,15 @@
+<form [formGroup]="guestForm" (ngSubmit)="uploadData()">
+
+   <div class="mb-3 col-6">
+     <mat-form-field class="full-width">
+       <mat-label>Guest Id</mat-label>
+       <input formControlName="id" matInput placeholder="G-001" type="text">
+       <mat-error>Guest Id is required</mat-error>
+     </mat-form-field>
+   </div>
+
+  <div class="mb-3">
+      <button [disabled]="guestForm.invalid" mat-raised-button color="primary" type="submit">Delete Guest</button>
+  </div>
+
+</form>

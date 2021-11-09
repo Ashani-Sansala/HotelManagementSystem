@@ -1,0 +1,84 @@
+<form [formGroup]="employeeForm" (ngSubmit)="uploadData()">
+  <div class="main-wrap">
+
+    <div class="left-wrap">
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Employee Id</mat-label>
+          <input formControlName="empId" matInput placeholder="E-001" type="text">
+          <mat-error>Employee Id is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Employee Name</mat-label>
+          <input formControlName="empName" matInput placeholder="A.R.Fernando" type="text">
+          <mat-error>Employee Name is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Designation</mat-label>
+          <input formControlName="designation" matInput type="text">
+          <mat-error>Designation is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Email Address</mat-label>
+          <input formControlName="email" matInput placeholder="ashani@gmail.com" type="email">
+          <mat-error>Email Address is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Contact No</mat-label>
+          <input formControlName="contact" matInput type="text">
+          <mat-error>Contact No is required</mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="right-wrap">
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Salary</mat-label>
+          <input formControlName="salary" matInput type="number">
+          <mat-error>Salary is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="gender-wrap">
+        <label class="form-label">Gender</label><br>
+        <mat-radio-group formControlName="gender" aria-label="Select an option" color="primary">
+          <mat-radio-button value="Male">Male &nbsp;</mat-radio-button>
+          <mat-radio-button value="Female">Female &nbsp;</mat-radio-button>
+          <mat-radio-button value="Other">Other </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br>
+
+      <div class="mb-3 col-6">
+        <mat-form-field class="full-width">
+          <mat-label>Address</mat-label>
+          <textarea formControlName="address" matInput></textarea>
+          <mat-error>Address is required</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-3">
+        <button [disabled]="employeeForm.invalid" mat-raised-button color="primary" type="submit">Save Employee</button>
+      </div>
+
+    </div>
+
+  </div>
+</form>
+

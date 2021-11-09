@@ -1,0 +1,33 @@
+<div class="mb-3">
+  <input #element (keyup.enter)="search(element.value)" type="search" class="form-control" id="search" placeholder="Search here">
+</div>
+
+<br>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Employee Id</th>
+    <th>Employee Name</th>
+    <th>Designation</th>
+    <th>Email Address</th>
+    <th>Contact No</th>
+    <th>Salary</th>
+    <th>Gender</th>
+    <th>Address</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{dataSet?.empId}}</td>
+    <td>{{dataSet?.empName}}</td>
+    <td>{{dataSet?.designation}}</td>
+    <td>{{dataSet?.email}}</td>
+    <td>{{dataSet?.contact}}</td>
+    <td>{{dataSet?.salary}}</td>
+    <td>{{dataSet?.gender}}</td>
+    <td>{{dataSet?.address}}</td>
+  </tr>
+  </tbody>
+</table>
+

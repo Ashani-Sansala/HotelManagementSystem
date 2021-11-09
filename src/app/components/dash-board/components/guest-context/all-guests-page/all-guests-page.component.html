@@ -1,0 +1,33 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Guest Id</th>
+    <th>Guest Name</th>
+    <th>Contact Number</th>
+    <th>Email Address</th>
+    <th>Country</th>
+    <th>Gender</th>
+    <th>Address</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let tempData of guests; index as num;">
+    <td>{{tempData.id}}</td>
+    <td>{{tempData.name}}</td>
+    <td>{{tempData.contact}}</td>
+    <td>{{tempData.email}}</td>
+    <td>{{tempData.country}}</td>
+    <td>{{tempData.gender}}</td>
+    <td>{{tempData.address}}</td>
+    <td>Active</td>
+  </tr>
+  </tbody>
+</table>
+
+
+<mat-paginator [length]="100"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 25, 100]"
+               aria-label="Select page">
+</mat-paginator>
